@@ -14,7 +14,7 @@ export default function Example() {
   const getBlogsByCategory = async () => {
     try {
       setIsLoading(true);
-        const { data } = await axios.post(`https://jr-assist-api.vercel.app/api/blogs/clubes/`);
+        const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/clubes/`);
         if (data) {
           setBlogs(data.blogs);
           setIsLoading(false);
