@@ -190,19 +190,24 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 const verifyAuthToken = asyncHandler(async (req, res) => {
+    const {id, token} = req.params;
     try {
-        const user = await User.findById(req.params.id);
+
+        const user = await User.findById(id);
         if (!user) {
             return res.status(404).json({ error: 'User not found to verify' });
         }
 
-        const token = await Token.findOne({ userId: user._id, token: req.params.token });
-        if (!token) {
+        const tokenn = await Token.findOne({ userId: id, token: token });
+        if (!tokenn) {
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        await User.updateOne({ _id: user._id , isVerified: true });
-        await Token.deleteOne({ userId: user._id, token: req.params.token });
+        await User.updateOne({ _id: id} ,{ isVerified: true });
+        await Token.deleteOne({ userId: id}, {token: token });
+
+        return res.status(200).json({ message: 'Token verified successfully' });
+
     }
     catch (error) {
         res.status(500).json({ error: 'Failed to verify token' });
