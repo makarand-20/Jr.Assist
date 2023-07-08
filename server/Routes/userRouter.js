@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {registerUser, loginUser, verifyToken, updateUser, userCurrent, getAllUsers, getUserById, verifyAuthToken} = require('../controllers/userController');
+const {registerUser, loginUser, verifyToken, updateUser, userCurrent, getAllUsers, getUserById, verifyAuthToken, getTotalUsers} = require('../controllers/userController');
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
@@ -10,6 +10,7 @@ router.put('/update/:id', updateUser);
 router.get('/all', getAllUsers);
 router.get('/getuser/:id', getUserById);
 router.get('/:id/confirmation/:token', verifyAuthToken);
+router.get('/totalusers', getTotalUsers);
 
 
 module.exports = router;

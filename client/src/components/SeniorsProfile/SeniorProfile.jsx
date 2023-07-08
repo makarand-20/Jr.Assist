@@ -17,7 +17,7 @@ const ProfilePage = () => {
     const getUser = async () => {
         try {
             setIsLoading(true);
-            const { data } = await axios.get(`https://jr-assist-server.vercel.app/api/users/getuser/${param.id}`);
+            const { data } = await axios.get(`http://localhost:4002/api/users/getuser/${param.id}`);
             if (data) {
                 setUser(data.user);
                 setIsLoading(false);

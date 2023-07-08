@@ -223,10 +223,10 @@ const technology = async (req, res) => {
         })
     }
 }
-const clubes = async (req, res) => {
+const clubs = async (req, res) => {
     try {
         const {category} = req.params;
-        const blogs = await Blog.find({category: 'Clubes'}).select('-body -__v -updatedAt').sort({createdAt: -1});
+        const blogs = await Blog.find({category: 'clubs'}).select('-body -__v -updatedAt').sort({createdAt: -1});
         if(blogs){
             res.status(200).json({
                 BlogCount: blogs.length,
@@ -302,6 +302,39 @@ const upvoteBlog = async (req, res) => {
     }
 }
 
+const countBlogs = async (req, res) => {
+    try {
+        const blogs = await Blog.find().select('-body -__v -updatedAt -createdAt -author -category -image -title ');
+
+
+        let totalUpvotes = 0;
+        blogs.forEach((blog) => {
+          totalUpvotes += blog.upvotes.length;
+        });
+
+        // Calculate the total views
+        let totalViews = 0;
+        blogs.forEach(blog => {
+        totalViews += blog.views;
+        });
+
+        res.status(200).json({
+            blogs,
+            blogCount : blogs.length,
+            totalViews,
+            totalUpvotes,
+        })
+    }
+    catch(err){
+        res.status(500).json({
+            status: 'fail',
+            message: err.message,
+        })
+    }
+}
+
+
+
 module.exports = {
     createBlog,
     getAllBlogs,
@@ -311,7 +344,8 @@ module.exports = {
     getBlogsByAuthor,
     company,
     technology,
-    clubes,
+    clubs,
     general,
-    upvoteBlog
+    upvoteBlog,
+    countBlogs
 }

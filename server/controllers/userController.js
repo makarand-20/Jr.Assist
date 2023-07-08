@@ -214,6 +214,20 @@ const verifyAuthToken = asyncHandler(async (req, res) => {
     }
 });
 
+const getTotalUsers = async (req, res) => {
+    try {
+      const totalUsers = await User.countDocuments();
+      
+      res.status(200).json({
+        totalUsers: totalUsers,
+      });
+    } catch (error) {
+      res.status(500).json({
+        error: 'Failed to get total users',
+      });
+    }
+  };
+
 module.exports = {
     registerUser,
     loginUser,
@@ -223,4 +237,5 @@ module.exports = {
     getUserById,
     updateUser,
     verifyAuthToken,
+    getTotalUsers
 };

@@ -25,7 +25,7 @@ const EditBlogForm = () => {
     const getOneBlog = async () => {
         try {
             setIsLoading(true);
-            const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/singleblog/${param.id}`);
+            const { data } = await axios.post(`http://localhost:4002/api/blogs/singleblog/${param.id}`);
             if (data) {
               setInputs(data.blog);
               setIsLoading(false);
@@ -48,7 +48,7 @@ const EditBlogForm = () => {
         e.preventDefault();
         try {
             setIsLoading(true);
-            const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/updateblog/${param.id}`, inputs);
+            const { data } = await axios.post(`http://localhost:4002/api/blogs/updateblog/${param.id}`, inputs);
             if (data) {
                 toast.success("Blog Updated Successfully 👍");
                 navigate(`/myblogs`);

@@ -11,7 +11,7 @@ const MainPage = () => {
     useEffect(() => {
         const verifyEmail = async () => {
             try {
-                const url = (`https://jr-assist-server.vercel.app/api/users/${param.id}/confirmation/${param.token}`);
+                const url = (`http://localhost:4002/api/users/${param.id}/confirmation/${param.token}`);
                 const {data} = await axios.get(url)
                 console.log(data)
                 setVerified(true)

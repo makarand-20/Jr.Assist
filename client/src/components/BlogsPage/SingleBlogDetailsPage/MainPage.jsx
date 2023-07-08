@@ -27,7 +27,7 @@ export default function Example() {
 
     const deleteBlog = async () => {
         try {
-            const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/deleteblog/${param.id}`);
+            const { data } = await axios.post(`http://localhost:4002/api/blogs/deleteblog/${param.id}`);
             if (data) {
                 toast.success("Blog Deleted Successfully 🚮");
                 window.location.href = "/myblogs";
@@ -54,10 +54,10 @@ export default function Example() {
     const getOneBlog = async () => {
         try {
             setIsLoading(true);
-            const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/singleblog/${param.id}`);
+            const { data } = await axios.post(`http://localhost:4002/api/blogs/singleblog/${param.id}`);
             if (data) {
               const updatedBlog = { ...data.blog, views: data.blog.views + 1 };
-              await axios.post(`https://jr-assist-server.vercel.app/api/blogs/updateblog/${param.id}`, updatedBlog);
+              await axios.post(`http://localhost:4002/api/blogs/updateblog/${param.id}`, updatedBlog);
               setBlogs(updatedBlog);
               setIsLoading(false);
             }
@@ -75,7 +75,7 @@ export default function Example() {
     //upvote a blog 
     const upvoteBlog = async () => {
         try {
-            const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/upvoteblog/${param.id}`,{userId});
+            const { data } = await axios.post(`http://localhost:4002/api/blogs/upvoteblog/${param.id}`,{userId});
             if (data) {
                 toast.success("Thanks for Upvoting ❤️");
             }
