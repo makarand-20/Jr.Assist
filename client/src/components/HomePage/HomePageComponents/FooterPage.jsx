@@ -5,7 +5,7 @@ export default function Example() {
         <div className="mx-auto">
           <div>
             <p className="flex justify-center mt-1 sm:text-sm lg:text-lg text-gray-900 leading-relaxed">
-             Copyright @ reserved by &nbsp; <span className="text-blue-700 decoration-solid"> Makarand Khiste </span>
+             Copyright &copy; reserved by &nbsp; <span className="text-blue-700 decoration-solid"> Makarand Khiste </span>
             </p>
           </div>
         </div>

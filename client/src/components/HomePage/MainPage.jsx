@@ -1,7 +1,6 @@
 import React from 'react'
 import LandingPage from './HomePageComponents/LandingPage'
 import FeaturesPage from './HomePageComponents/FeaturesPage'
-import WorkWithMePage from './HomePageComponents/WorkWithMePage'
 import CategoriesPage from './HomePageComponents/CategoriesPage'
 import LiveCounterPage from './HomePageComponents/LiveCounterPage'
 import AdvertisePage from './HomePageComponents/AdvertisePage'
@@ -13,7 +12,6 @@ const MainPage = () => {
     <>
         <LandingPage/>
         <FeaturesPage/>
-        <WorkWithMePage/>
         <CategoriesPage/>
         <LiveCounterPage/>
         <AdvertisePage/>
