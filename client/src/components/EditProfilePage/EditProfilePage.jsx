@@ -19,7 +19,7 @@ export default function Example() {
   const getIndUser = async () => {
     try {
       setIsLoading(true);
-      const {data} = await axios.get(`http://localhost:4002/api/users/getuser/${id}`);
+      const {data} = await axios.get(`https://jr-assist-server.vercel.app/api/users/getuser/${id}`);
       setInputs({
         firstName: data.user.firstName,
         lastName: data.user.lastName,
@@ -58,7 +58,7 @@ export default function Example() {
 
     try {
       //make a post request to register the user
-      const { data } = await axios.put(`http://localhost:4002/api/users/update/${id}`, {
+      const { data } = await axios.put(`https://jr-assist-server.vercel.app/api/users/update/${id}`, {
         firstName: inputs.firstName,
         lastName: inputs.lastName,
         profileImage: inputs.profilePicture,

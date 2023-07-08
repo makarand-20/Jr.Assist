@@ -14,7 +14,7 @@ export default function Example() {
   const countBLogs = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post("http://localhost:4002/api/blogs/countblogs/");
+      const { data } = await axios.post("https://jr-assist-server.vercel.app/api/blogs/countblogs/");
       if (data) {
         setBlogs(data.blogCount);
         setViews(data.totalViews);
@@ -32,7 +32,7 @@ export default function Example() {
   const countUsers = async () => {
     try { 
       setIsLoading(true);
-      const { data } = await axios.get("http://localhost:4002/api/users/totalusers/");
+      const { data } = await axios.get("https://jr-assist-server.vercel.app/api/users/totalusers/");
       if (data) {
         setuserCount(data.totalUsers);
         setIsLoading(false);

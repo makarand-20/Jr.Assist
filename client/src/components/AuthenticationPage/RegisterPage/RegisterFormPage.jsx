@@ -67,7 +67,7 @@ const RegisterForm = () => {
       }
 
       //make a post request to register the user
-      const { data } = await axios.post("http://localhost:4002/api/users/register", {
+      const { data } = await axios.post("https://jr-assist-server.vercel.app/api/users/register", {
         username: inputs.name,
         email: inputs.email,
         password: inputs.password,

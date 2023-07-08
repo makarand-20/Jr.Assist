@@ -43,7 +43,7 @@ const EditBlogForm = () => {
         try {
           const cat = inputs.category.replace(/"/g, '');
           const sanitizedHtmlContent = DOMPurify.sanitize(content);
-          const { data } = await axios.post("http://localhost:4002/api/blogs/createblog/", {
+          const { data } = await axios.post("https://jr-assist-server.vercel.app/api/blogs/createblog/", {
             title: inputs.title,
             body: sanitizedHtmlContent,
             image: inputs.image,
