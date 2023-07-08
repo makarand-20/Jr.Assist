@@ -20,8 +20,9 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage'))
 const SeniorsProfile = lazy(() => import('./pages/SeniorsProfile'))
 const CompanyPage = lazy(() => import('./pages/Categories/CompanyPage'))
 const TechnologyPage = lazy(() => import('./pages/Categories/TechnologyPage'))
-const ClubesPage = lazy(() => import('./pages/Categories/ClubesPage'))
+const ClubsPage = lazy(() => import('./pages/Categories/ClubsPage'))
 const GeneralPage = lazy(() => import('./pages/Categories/GeneralPage'))
+const LiveStatsPage = lazy(() => import('./pages/LiveStatsPage'))
 
 
 function App() {  
@@ -44,13 +45,14 @@ function App() {
             <Route path='/:id/confirmation/:token' element={<EmailVerifyPage/>}/>
             <Route path='/*' element={<Navigate to={'/invalidUrl'}/>}/>
             <Route path='/' element={<HomePage/>}/>
+            <Route path='/livestats' element={<LiveStatsPage/>}/>
             <Route path='/aboutme' element={<AboutMePage/>}/>
             <Route path='/allblogs' element={<AllBlogsPage/>}/>
             <Route path='/singleblog/:id' element={<SingleBlogDetailsPage/>}/>
 
             <Route path='/company' element={<CompanyPage/>}/>
             <Route path='/technology' element={<TechnologyPage/>}/>
-            <Route path='/clubes' element={<ClubesPage/>}/>
+            <Route path='/clubs' element={<ClubsPage/>}/>
             <Route path='/general' element={<GeneralPage/>}/>
 
             <Route path='/myblogs' element={<PrivateRoute Component={ByIdBlogsPage}/>}/>

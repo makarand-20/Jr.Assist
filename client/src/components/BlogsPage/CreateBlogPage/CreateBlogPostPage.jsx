@@ -10,7 +10,7 @@ import DOMPurify from 'dompurify';
 const categories = [
   { value: 'Company', label: 'Company' },
   { value: 'Technology', label: 'Technology' },
-  { value: 'Clubes', label: 'Clubs' },
+  { value: 'clubs', label: 'Clubs' },
   { value: 'General', label: 'General' },
 ];
 

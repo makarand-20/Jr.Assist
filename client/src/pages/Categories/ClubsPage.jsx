@@ -1,5 +1,5 @@
 import SubNavBar from "../../components/HelperPages/Navbar/SubNavbar"
-import ClubesBlog from "../../components/CategoryPages/ClubesBlog"
+import ClubsBlog from "../../components/CategoryPages/ClubsBlog"
 import BlogsSearchBar from "../../components/HelperPages/Searchbar/BlogsSearchBar"
 
 export default function Example() {
@@ -24,7 +24,7 @@ export default function Example() {
             <SubNavBar/>
             <div className="my-12">
                 <BlogsSearchBar/>
-                <ClubesBlog/>
+                <ClubsBlog/>
             </div>
 
 

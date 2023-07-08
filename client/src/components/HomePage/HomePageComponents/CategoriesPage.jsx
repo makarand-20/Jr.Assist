@@ -1,26 +1,25 @@
+import {Link} from 'react-router-dom'
+
 export default function Example() {
 
   const callouts = [
     {
       name: 'Desk and Office',
       description: 'Comapanies Guides',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
-      imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
-      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1773&q=80',
+      href: '/company',
     },
     {
       name: 'Self-Improvement',
       description: 'Technology Guidence',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-      imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80',
+      href: '/technology',
     },
     {
-      name: 'Travel',
-      description: 'Students activities cells',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
-      imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-      href: '#',
+      name: 'Clubs',
+      description: 'Students clubs',
+      imageSrc: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80',
+      href: '/clubs',
     },
   ]
 
@@ -46,7 +45,7 @@ export default function Example() {
             <div className="mx-auto max-w-2xl lg:text-center mt-24">
               <h2 className="text-base font-semibold leading-7 text-indigo-600">Categories</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                The text about categories is right here
+                The categories we have majorly covered
               </p>
             </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">
@@ -57,15 +56,14 @@ export default function Example() {
                         <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                           <img
                             src={callout.imageSrc}
-                            alt={callout.imageAlt}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <h3 className="mt-6 text-sm text-gray-500">
-                          <a href={callout.href}>
+                          <Link to={callout.href}>
                             <span className="absolute inset-0" />
                             {callout.name}
-                          </a>
+                          </Link>
                         </h3>
                         <p className="text-base font-semibold text-gray-900">{callout.description}</p>
                       </div>

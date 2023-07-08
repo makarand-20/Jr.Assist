@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
+import CounterPage from './CounterPage'
 
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Live Stats', href: '/livestats' },
   { name: 'About Me', href: '/aboutme' },
-  { name: 'All Blogs', href: '/allblogs' },
+  { name: 'All Blogs', href: '/allblogs' }
 ]
 
 export default function Example() {
@@ -88,7 +89,7 @@ export default function Example() {
                     </div>
                     <div className="py-6">
                     <Link
-                        to="/login"
+                        to="#"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                         Log in
@@ -113,37 +114,16 @@ export default function Example() {
                 }}
             />
             </div>
-            <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:pt-46">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Something special for you juniors! 😎🔥{' '}
-                <Link to="/allblogs" className="font-semibold text-indigo-600">
-                    <span className="absolute inset-0" aria-hidden="true" />
-                    Read more <span aria-hidden="true">&rarr;</span>
-                </Link>
-                </div>
+
+
+            
+            <div className="mx-auto pt-40">
+                <h1 className="flex justify-center items-center text-gray-900 font-bold text-5xl tracking-tight sm:text-5xl ">Live Stats</h1>
+                <CounterPage/>
             </div>
-            <div className="text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                No one cares until someone cares, 
-                <span className="bg-yellow-200">be that one!</span>
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
-                Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, and the small guide of caring, all of which have the potential to turn someonces life around. – Leo Buscaglia
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                <Link
-                    to="/allblogs"
-                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                    Get started
-                </Link>
-                <Link to="/aboutme" className="text-sm font-semibold leading-6 text-gray-900">
-                    About Me <span aria-hidden="true">→</span>
-                </Link>
-                </div>
-            </div>
-            </div>
+
+
+
             <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true"

@@ -1,29 +1,29 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import {BuildingOffice2Icon, UserGroupIcon, DevicePhoneMobileIcon, GlobeEuropeAfricaIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Company Guides',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+      'Get insights and guidance on various companies, including their culture, interview process, and tips for success. Stay updated with the latest information to help you excel in your career.',
+    icon: BuildingOffice2Icon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Student Clubs',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Discover and explore student clubs. Get information about different clubs, their activities, and how you can get involved to pursue your interests and passions.',
+    icon: UserGroupIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Latest Technologies Guide',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+      'Guide: Stay up-to-date with the latest technology trends and advancements. Get access to a wide range of topics, including emerging technologies, programming languages, frameworks, and tools.',
+    icon: DevicePhoneMobileIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'In General Guide',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      ' Access a comprehensive guide covering a variety of topics, including personal development, productivity tips, career advice, and more.',
+    icon: GlobeEuropeAfricaIcon,
   },
 ]
 
@@ -34,11 +34,10 @@ export default function Example() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">Grow faster</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything our juniors need to know about!
+            Everything our juniors need to know about! 😌
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            Those things which was missed by us, we will aware you here! And those things which is missing in the colleges syllbus, we will cover up them here! 🫵
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl sm:mt-10 lg:mt-10 lg:max-w-4xl">
