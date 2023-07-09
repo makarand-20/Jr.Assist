@@ -36,7 +36,7 @@ const ProfilePage = () => {
     {isLoading ? (
         <Loader />
     ):(
-        <div className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg mt-24">
+        <div className="max-w-3xl mx-auto bg-gray-50 p-12 rounded-xl shadow-lg mt-24">
       <div className="text-center">
         <img
           src={user.profileImage}
@@ -53,7 +53,7 @@ const ProfilePage = () => {
         </div>
       </div>
 
-        <div className='flex justify-center gap-3 mb-8 mt-3'>
+        <div className='flex justify-center gap-3 mb-12 mt-3'>
             <p className='bg-gray-200 rounded-xl px-3 py-2 inline-block text-xs sm:text-sm'>Blogs Written : <b>{user.blogs.length}</b></p>
             <p className='bg-gray-200 rounded-xl px-3 py-2 inline-block text-xs sm:text-sm'> Total Views : <b>{
                 user.blogs.reduce((acc, blog) => {
@@ -63,13 +63,13 @@ const ProfilePage = () => {
             }</b></p>
         </div>
 
-      <div className='flex justify-center mt-4 mb-3'>
+      <div className='flex justify-center mt-2 w-full'>
         <a href={user.linkedin} target='_blank' rel="noopener noreferrer">
           <button className='px-3 py-2 shadow-md rounded-md text-sm sm:text-lg text-white bg-blue-600 hover:bg-slate-200 hover:text-black'><FaUsers className="text-xl inline-block" /> &nbsp; Connect</button>
         </a>
       </div>
       
-      <div className="mt-4 flex justify-center space-x-4">
+      <div className="mt-10 flex justify-center space-x-4">
         <FaRegHandPointRight className="text-2xl mt-2" />
         <a href={user.github} target="_blank" rel="noopener noreferrer" className="text-gray-600">
           <FaGithub className="text-4xl" />

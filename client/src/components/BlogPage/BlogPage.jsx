@@ -1,8 +1,29 @@
 import React from 'react'
 import moment from "moment";
 import {Link} from 'react-router-dom'
+import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const BlogPage = ({ blog }) => {
+const BlogPage = ({ blog },{isUpvoted}) => {
+
+  //crate a function to copy the link to clipboard
+  const copyLink = () => {
+
+    navigator.clipboard.writeText(`http://localhost:5173/singleblog/${blog._id}`);
+    toast.success('Linked copied to clipboard ✌️', {
+      position: "top-center",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  };
+
+
   return (
         <article key={blog._id} className="flex flex-col items-start justify-between">
           <Link to={`/singleblog/${blog._id}`}>
@@ -40,6 +61,7 @@ const BlogPage = ({ blog }) => {
           {/* Additional section for upvoting and comments */}
           <div className="flex items-center text-xs">
             <div className="flex items-center gap-x-4">
+
               <button className="text-sm mt-3 font-semibold leading-6 relative z-10 rounded-full px-2 py-1 text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-100 pointer-events-none">
                 Upvotes 👍 | {blog.upvotes.length}
               </button>
@@ -47,6 +69,15 @@ const BlogPage = ({ blog }) => {
               <button className="text-sm mt-3 font-semibold leading-6 relative z-10 rounded-full px-2 py-1 text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-100 pointer-events-none">
                 Views 👁️ | {blog.views}
               </button>
+              
+              {isUpvoted ? (
+                <button>hehe</button>
+              ):(
+                <button onClick={copyLink} className="text-sm mt-3 font-semibold leading-6 relative z-10 rounded-full px-2 py-1 text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-100">
+                <PaperAirplaneIcon className="h-6 w-4" aria-hidden="true" />
+                </button>
+              )}
+
             </div>
           </div>
         </article>

@@ -76,13 +76,13 @@ export default function Example() {
                 <dl className="grid grid-cols-1 gap-x-16 gap-y-16 text-center lg:grid-cols-4">
                 
                   <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                    <dt className="text-lg leading-7 text-gray-600 font-bold">Number Of Users 🙋‍♂️</dt>
+                    <dt className="text-lg leading-7 text-gray-600 font-bold">Registered Users 🙋‍♂️</dt>
                       <dd className="order-first text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                         {userCount} 
                       </dd>
                   </div>
                   <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                    <dt className="text-lg leading-7 text-gray-600 font-bold">Number Of Blogs 📝</dt>
+                    <dt className="text-lg leading-7 text-gray-600 font-bold">Total Blogs Written 📝</dt>
                       <dd className="order-first text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                         {blogs} 
                       </dd>
