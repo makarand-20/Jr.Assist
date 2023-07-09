@@ -10,7 +10,7 @@ const BlogPage = ({ blog },{isUpvoted}) => {
   //crate a function to copy the link to clipboard
   const copyLink = () => {
 
-    navigator.clipboard.writeText(`http://localhost:5173/singleblog/${blog._id}`);
+    navigator.clipboard.writeText(`https://jr-assist.vercel.app/singleblog/${blog._id}`);
     toast.success('Linked copied to clipboard ✌️', {
       position: "top-center",
       autoClose: 1500,
