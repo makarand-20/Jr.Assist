@@ -17,12 +17,13 @@ export default function Example() {
 
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const user = useSelector((state) => state.user);
+  const value = useSelector((state) => state.value);
   const dispatch = useDispatch();
 
   const handleClearStorage = () => {
     toast.success('Signing Off! See you soon 🫡');
     persistor.purge();
-    sessionStorage.clear();
+    localStorage.clear();
     dispatch(logout());
   };
 
@@ -223,7 +224,7 @@ export default function Example() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-10 w-10 rounded-full"
-                        src={isLoggedIn && user.profileImage ? user.profileImage : '/profile.png'}
+                        src={isLoggedIn && value && user.profileImage ? value : user.profileImage}
                         alt=""
                       />
                     </Menu.Button>

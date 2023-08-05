@@ -5,7 +5,7 @@ import BlogPage from '../../BlogPage/BlogPage'
 
 export default function Example() {
   //get the user id from session storage
-  const userId = sessionStorage.getItem('userId');
+  const userId = localStorage.getItem('userId');
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

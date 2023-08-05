@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {useDispatch} from 'react-redux';
-import {updateUser} from '../../store/authSlice';
+import {updateUserr} from '../../store/authSlice';
 import Loader from '../HelperPages/Loader/Loader';
+
 
 export default function Example() {
   const [isLoading, setIsLoading] = useState(true);
-  const id = sessionStorage.getItem('userId');
+  const id = localStorage.getItem('userId');
   const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [inputs, setInputs] = useState({});
@@ -33,7 +34,6 @@ export default function Example() {
         twitter: data.user.twitter,
       });
       setIsLoading(false);
-      console.log(error);
     } catch (err) {
       console.log(err);
     }
@@ -72,10 +72,9 @@ export default function Example() {
         isProfileComplete: true,
       });
 
+      dispatch(updateUserr(inputs.profilePicture));
       toast.success("Profile updated successfully! 🎉");
-      dispatch(updateUser(data.user));
       navigate('/allblogs');
-      // dispatch(isProfileUpdated(true));
     } catch (err) {
       console.log(err);
       setError(err.response.data.error);
@@ -162,7 +161,6 @@ export default function Example() {
                   name="bio"
                   rows={4}
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  defaultValue={''}
                   placeholder='Tell us about yourself (min 2 lines)'
                   required
                 />

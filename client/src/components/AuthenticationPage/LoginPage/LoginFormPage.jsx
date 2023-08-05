@@ -47,7 +47,7 @@ const LoginForm = () => {
         password: inputs.password,
       });
       if (data) {
-        sessionStorage.setItem('userId', data.user.id);
+        localStorage.setItem('userId', data.user.id);
         dispatch(login(data.user));
         navigate('/allblogs');
         toast.success('Login Successful! 🥳');

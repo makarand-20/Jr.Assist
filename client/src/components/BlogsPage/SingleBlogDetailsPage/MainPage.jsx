@@ -16,7 +16,7 @@ import Loader from '../../HelperPages/Loader/Loader'
 
 export default function Example() {
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
-    const userId = sessionStorage.getItem('userId');
+    const userId = localStorage.getItem('userId');
     //get a blog id from params
     const param = useParams()
 
