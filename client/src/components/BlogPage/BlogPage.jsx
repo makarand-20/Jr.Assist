@@ -63,11 +63,11 @@ const BlogPage = ({ blog },{isUpvoted}) => {
             <div className="flex items-center gap-x-4">
 
               <button className="text-sm mt-3 font-semibold leading-6 relative z-10 rounded-full px-2 py-1 text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-100 pointer-events-none">
-                Upvotes 👍 | {blog.upvotes.length}
+                Upvotes | {blog.upvotes.length}
               </button>
 
               <button className="text-sm mt-3 font-semibold leading-6 relative z-10 rounded-full px-2 py-1 text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-100 pointer-events-none">
-                Views 👁️ | {blog.views}
+                Views | {blog.views}
               </button>
               
               {isUpvoted ? (

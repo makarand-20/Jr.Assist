@@ -61,7 +61,7 @@ const createBlog = async (req, res) => {
 
 const getAllBlogs = async (req, res) => {
     try {
-        const blogs = await Blog.find({}).select('-body -__v -updatedAt').sort({createdAt: -1});
+        const blogs = await Blog.find({}).select('-body -__v -updatedAt').sort({createdAt: -1}).limit(6);
         if(blogs){
             res.status(200).json({
                 BlogCount: blogs.length,
@@ -82,6 +82,43 @@ const getAllBlogs = async (req, res) => {
         })
     }
 }
+
+// const getAllBlogs = async (req, res) => {
+//     try {
+//       const page = parseInt(req.query.page) || 1;
+//       const limit = parseInt(req.query.limit) || 6;
+//       const skip = (page - 1) * limit;
+  
+//       const blogs = await Blog.find({})
+//         .select('-body -__v -updatedAt')
+//         .sort({ createdAt: -1 })
+//         .skip(skip)
+//         .limit(limit);
+  
+//       const totalBlogsCount = await Blog.countDocuments();
+  
+//       if (blogs.length > 0) {
+//         res.status(200).json({
+//           BlogCount: blogs.length,
+//           TotalBlogs: totalBlogsCount,
+//           TotalPages: Math.ceil(totalBlogsCount / limit),
+//           CurrentPage: page,
+//           blogs,
+//         });
+//       } else {
+//         res.status(404).json({
+//           status: 'fail',
+//           message: 'No blogs found',
+//         });
+//       }
+//     } catch (err) {
+//       res.status(500).json({
+//         status: 'fail',
+//         message: err.message,
+//       });
+//     }
+//   };
+  
 
 const getBlogById = async (req, res) => {
     try {
