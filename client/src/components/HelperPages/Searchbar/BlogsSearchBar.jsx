@@ -1,17 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa';
-import axios from "axios";
-import Loader from '../../HelperPages/Loader/Loader'
-import { toast } from "react-toastify";
+import React, { useState, useRef } from 'react';
 import "react-toastify/dist/ReactToastify.css";
 
-
-const SearchBar = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+const SearchBar = ({onSearch}) => {
   const [searchValue, setSearchValue] = useState('');
   const searchRef = useRef(null);
-
 
   const handleChange = (event) => {
     setSearchValue(event.target.value);
@@ -19,6 +11,7 @@ const SearchBar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    onSearch(searchValue);
   };
 
   return (

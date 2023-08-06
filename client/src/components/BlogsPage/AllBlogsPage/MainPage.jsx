@@ -1,7 +1,5 @@
-import AllBlogsPage from './AllBlogsPage'
-import SubNavBar from "../../HelperPages/Navbar/SubNavbar"
-import BlogsSearchBar from '../../HelperPages/Searchbar/BlogsSearchBar'
-
+import AllBlogsPage from './AllBlogsPage';
+import SubNavBar from "../../HelperPages/Navbar/SubNavbar";
 
 export default function Example() {
 
@@ -24,7 +22,6 @@ export default function Example() {
 
             <SubNavBar/>
             <div className="my-12">
-                <BlogsSearchBar/>
                 <AllBlogsPage/>
             </div>
           </div>

@@ -64,30 +64,58 @@ const getAllBlogs = async (req, res) => {
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 6;
       const skip = (page - 1) * limit;
-  
-      const blogs = await Blog.find({})
-        .select('-body -__v -updatedAt')
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit);
-  
-      const totalBlogsCount = await Blog.countDocuments();
-  
-      if (blogs.length > 0) {
-        res.status(200).json({
-          BlogCount: blogs.length,
-          TotalBlogs: totalBlogsCount,
-          TotalPages: Math.ceil(totalBlogsCount / limit),
-          CurrentPage: page,
-          blogs,
-        });
-      } else {
-        res.status(404).json({
-          status: 'fail',
-          message: 'No blogs found',
-        });
-      }
-    } catch (err) {
+      const { query } = req.query;
+
+        if (query) {
+            const searchedBlogs = await Blog.find({ $text: { $search: query } })
+            .select('-body -__v -updatedAt')
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit);
+
+            const totalBlogsCount = await Blog.countDocuments();
+            if (searchedBlogs.length > 0) {
+                res.status(200).json({
+                BlogCount: searchedBlogs.length,
+                TotalBlogs: totalBlogsCount,
+                TotalPages: Math.ceil(totalBlogsCount / limit),
+                CurrentPage: page,
+                searchedBlogs,
+                });
+            } else {
+                res.status(404).json({
+                status: 'fail',
+                message: 'No blogs found',
+                });
+            }
+        }
+        else
+        {
+            const blogs = await Blog.find({})
+            .select('-body -__v -updatedAt')
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit);
+    
+            const totalBlogsCount = await Blog.countDocuments();
+    
+            if (blogs.length > 0) {
+                res.status(200).json({
+                BlogCount: blogs.length,
+                TotalBlogs: totalBlogsCount,
+                TotalPages: Math.ceil(totalBlogsCount / limit),
+                CurrentPage: page,
+                blogs,
+                });
+            } else {
+                res.status(404).json({
+                status: 'fail',
+                message: 'No blogs found',
+                });
+            }
+        }
+    } 
+    catch (err) {
       res.status(500).json({
         status: 'fail',
         message: err.message,
@@ -345,8 +373,6 @@ const countBlogs = async (req, res) => {
         })
     }
 }
-
-
 
 module.exports = {
     createBlog,
