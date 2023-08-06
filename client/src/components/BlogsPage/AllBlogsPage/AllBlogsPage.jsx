@@ -14,7 +14,7 @@ export default function Example() {
   const getAllBlogs = async (page) => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/allblogs/?page=${page}`);
+      const { data } = await axios.post(`http://localhost:4002/api/blogs/allblogs/?page=${page}`);
       if (data) {
         setBlogs(data.blogs);
         setTotalPages(data.TotalPages);
@@ -60,15 +60,18 @@ export default function Example() {
             </div>
 
     {/* ***************************************************************************************/}
-            <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+            <div className="flex items-center justify-between mt-16 px-4 py-3 sm:px-6">
               <div className="flex flex-1 justify-between sm:hidden">
                   <button
-                      className="relative inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                      className={`relative inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium ${
+                        currentPage === 1 ? '' : 'bg-blue-600 text-white'
+                      }`}
                       onClick={handlePrevPage}
                       disabled={currentPage === 1}
 
                   >
-                      Previous
+                      <span className="sr-only">Previous</span>
+                      <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                   </button>
 
                   <div className='mt-2 px-3'>
@@ -79,19 +82,24 @@ export default function Example() {
                   </div>
 
                   <button 
-                  className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  className={`relative inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium ${
+                    currentPage === totalPages ? '' : 'bg-blue-600 text-white'
+                  }`}
                   onClick={handleNextPage}
                   disabled={currentPage === totalPages}
                   >
-                    Next
+                    <span className="sr-only">Next</span>
+                    <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
                   </button>
               </div>
 
-              <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center mt-28">
+              <div className="hidden sm:flex sm:flex-1 sm:justify-center">
                   <div>
                       <nav className="isolate inline-flex -space-x-px rounded-md" aria-label="Pagination">
                           <button
-                              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                               className={`relative inline-flex items-center rounded-full px-2 py-2 ring-1 ring-inset ring-white text-white focus:z-20 focus:outline-offset-0 ${
+                                currentPage === 1 ? '' : 'bg-blue-600 text-white'
+                              }`}
                               onClick={handlePrevPage}
                               disabled={currentPage === 1}
                           >
@@ -102,12 +110,14 @@ export default function Example() {
                           <div className='mt-2 px-3'>
                               <p className="text-sm font-bold text-gray-700">
                                   Page <span className="font-bold">{currentPage}</span> of{' '}
-                                  <span className="font-bold">{totalPages}</span> results
+                                  <span className="font-bold">{totalPages}</span>
                               </p>
                           </div>
 
                           <button
-                              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                              className={`relative inline-flex items-center rounded-full px-2 py-2 ring-1 ring-inset ring-white text-white focus:z-20 focus:outline-offset-0 ${
+                                currentPage === totalPages ? '' : 'bg-blue-600 text-white'
+                              }`}
                               onClick={handleNextPage}
                               disabled={currentPage === totalPages}
                           >
@@ -124,4 +134,3 @@ export default function Example() {
     </>
   );
 }
-
