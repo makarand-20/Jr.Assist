@@ -14,7 +14,7 @@ export default function Example() {
   const getAllBlogs = async (page) => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post(`http://localhost:4002/api/blogs/allblogs/?page=${page}`);
+      const { data } = await axios.post(`https://jr-assist-server.vercel.app/api/blogs/allblogs/?page=${page}`);
       if (data) {
         setBlogs(data.blogs);
         setTotalPages(data.TotalPages);
