@@ -15,7 +15,7 @@ const SearchBar = ({onSearch}) => {
   };
 
   return (
-    <div className="relative lg:mx-20 mx-5" ref={searchRef}>
+    <div className="relative mb-10" ref={searchRef}>
       <form className="flex items-center" onSubmit={handleSubmit}>
         <div className={`relative transition-all duration-300 w-80`}>
           <div className="relative flex items-center">

@@ -87,20 +87,19 @@ export default function Example() {
       ) : (
 
         <>
-          <div className='flex flex-between'>
-            <BlogsSearchBar onSearch={handleSearch} />
-
-            {
-            searchedBlogs.length > 0 ? (
-            <button onClick={handleRefresh} className="flex gap-2 rounded-sm ring-1 ring-black px-2 py-2.5 text-sm text-black"> 
-            Clear Filter <ArchiveBoxXMarkIcon className="h-5 w-5"/>
-            </button>
-            ):(<></>)
-            }
-
-          </div>
-          <div className="py-5 sm:py-5">
+           <div className="py-5 sm:py-5">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+              <div className='flex justify-start max-w-7xl'>
+                <BlogsSearchBar onSearch={handleSearch} />
+                {
+                searchedBlogs.length > 0 ? (
+                <button onClick={handleRefresh} className="flex justify-end rounded-sm mx-10 px-2 py-2  text-black"> 
+                Clear search filter ❌
+                </button>
+                ):(<></>)
+                }
+              </div>
 
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 {searchedBlogs.length > 0
