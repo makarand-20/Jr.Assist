@@ -90,11 +90,11 @@ export default function Example() {
            <div className="py-5 sm:py-5">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-              <div className='flex justify-start max-w-7xl'>
+              <div className='flex justify-start max-w-7xl flex-col sm:flex-row'>
                 <BlogsSearchBar onSearch={handleSearch} />
                 {
                 searchedBlogs.length > 0 ? (
-                <button onClick={handleRefresh} className="flex justify-end rounded-sm mx-10 px-2 py-2  text-black"> 
+                <button onClick={handleRefresh} className="flex justify-end rounded-sm mx-auto sm:mx-10 sm:mb-auto mb-10  px-2 py-2   text-black"> 
                 Clear search filter ❌
                 </button>
                 ):(<></>)
