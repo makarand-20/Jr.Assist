@@ -23,7 +23,6 @@ export default function Example() {
 
             <SubNavBar/>
             <div className="my-12">
-                <BlogsSearchBar/>
                 <TechnologyBlog/>
             </div>
 

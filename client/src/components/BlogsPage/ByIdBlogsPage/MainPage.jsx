@@ -25,7 +25,6 @@ export default function Example() {
             <SubNavBar/>
             
             <div className="mx-auto mt-12">
-                <BlogsSearchBar/>
                 <ByIdBlogsPage/>
             </div>
 
