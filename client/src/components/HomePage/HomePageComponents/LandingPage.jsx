@@ -126,7 +126,7 @@ export default function Example() {
             <div className="text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 No one cares until someone cares, 
-                <span className="bg-yellow-200">be that one!</span>
+                <span className="text-red-600">be that one!</span>
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                 Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, and the small guide of caring, all of which have the potential to turn someonces life around. – Leo Buscaglia

@@ -64,6 +64,7 @@ export default function Example() {
                     {isLoggedIn && (
                       <>
                         <Link to={'/'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>Home</Link>
+                        <Link to={'/UsersListPage'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>Our Seniors</Link>
                         <Link to={'/allblogs'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>All Blogs</Link>
                         
                         <Link to={'/myblogs'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>My Blogs</Link>
@@ -136,8 +137,9 @@ export default function Example() {
                       <>
                         <Link to={'/'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>Home</Link>
 
-                        <Link to={'/allblogs'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>All Blogs</Link>
+                        <Link to={'/UsersListPage'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>Our Seniors</Link>
 
+                        <Link to={'/allblogs'} className='text-gray-900 hover:text-gray-900 rounded-md px-3 py-2 text-sm font-medium'>All Blogs</Link>
                         
                         <Menu as="div" className="relative ml-3">
 
@@ -268,6 +270,7 @@ export default function Example() {
             {isLoggedIn && (
                       <>
                         <Link to={'/'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>Home</Link>
+                        <Link to={'/UsersListPage'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>Our Seniors</Link>
                         <Link to={'/allblogs'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>All Blogs</Link>
                         
                         <Link to={'/myblogs'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>My Blogs</Link>
@@ -339,6 +342,7 @@ export default function Example() {
                     {!isLoggedIn && (
                       <>
                         <Link to={'/'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>Home</Link>
+                        <Link to={'/UsersListPage'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>Our Seniors</Link>
                         <Link to={'/allblogs'} className='text-gray-900 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>All Blogs</Link>
 
                         <Menu as="div" className="relative ml-3">

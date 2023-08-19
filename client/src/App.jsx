@@ -23,6 +23,7 @@ const TechnologyPage = lazy(() => import('./pages/Categories/TechnologyPage'))
 const ClubsPage = lazy(() => import('./pages/Categories/ClubsPage'))
 const GeneralPage = lazy(() => import('./pages/Categories/GeneralPage'))
 const LiveStatsPage = lazy(() => import('./pages/LiveStatsPage'))
+const UsersLiPage = lazy(() => import('./pages/UsersLiPage'))
 
 
 function App() {  
@@ -60,6 +61,7 @@ function App() {
             <Route path='/createblog' element={<PrivateRoute Component={CreateBlogPostPage}/>}/>
 
             <Route path='/userprofile/:id' element={<SeniorsProfile/>}/>
+            <Route path='/UsersListPage' element={<UsersLiPage/>}/>
             <Route path='/editprofile' element={<EditProfilePage/>}/>
             <Route path='/login' element={<LoginFormPage/>}/>
             <Route path='/register' element={<RegisterFormPage/>}/>
