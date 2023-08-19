@@ -13,7 +13,7 @@ export default function Example() {
     const getAllUsers = async (page) => {
         try {
           setIsLoading(true);
-          const { data } = await axios.get(`http://localhost:4002/api/users/all`);
+          const { data } = await axios.get(`https://jr-assist-server.vercel.app/api/users/all`);
           if (data) {
             setBlogs(data.users);
             setIsLoading(false);
