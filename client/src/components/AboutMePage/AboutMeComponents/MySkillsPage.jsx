@@ -5,12 +5,12 @@ export default function Example() {
 
       <div className="flex justify-center mb-10">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          My Github Contributions 🐍
+          Makarand's Github repos 🐍
         </h2>
       </div>
 
       <div className="flex justify-center">
-        <img className='bg-gradient-to-r from-sky-500 to-indigo-300 sm:h-60 h-auto object-fill' src="/makWN.svg" alt="snake eating my Contributions" />
+        <img className='bg-gradient-to-r from-sky-500 to-indigo-300 sm:h-60 h-auto object-fill' src="/makW.svg" alt="snake eating my repos" />
       </div>
 
       <div className="flex justify-center mt-10">
@@ -23,7 +23,7 @@ export default function Example() {
       
       <div className="flex justify-center items-center mt-36 mb-6">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              My Skills 👨‍💻
+              Our Skills 👨‍💻
           </h1>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-14 sm:px-6 sm:py-24 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
