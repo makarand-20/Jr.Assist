@@ -10,7 +10,7 @@ export default function Example() {
       </div>
 
       <div className="flex justify-center">
-        <img className='bg-gradient-to-r from-sky-500 to-indigo-300 sm:h-60 h-auto object-fill' src="/makW.svg" alt="snake eating my repos" />
+        <img className='bg-gradient-to-r from-sky-500 to-indigo-300 sm:h-60 h-auto object-fill' src="/makWN.svg" alt="snake eating my repos" />
       </div>
 
       <div className="flex justify-center mt-10">
