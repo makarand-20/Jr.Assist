@@ -147,7 +147,7 @@ const userCurrent = asyncHandler(async (req, res) => {
 
 //get all users
 const getAllUsers = asyncHandler(async (req, res) => {
-    const users = await User.find({}).select("-password -__v -createdAt -updatedAt");
+    const users = await User.find({}).select("-blogs -email -languages -bio -city -password -__v -createdAt -updatedAt");
     return res.status(200).json({ 
         UserCount: users.length,
         users
